@@ -1,5 +1,5 @@
-import Mock from '../mock'
-import shortId from 'shortid'
+import Mock from '../mock';
+import shortId from 'shortid';
 
 const NotificationDB = {
     list: [
@@ -40,31 +40,32 @@ const NotificationDB = {
             path: 'chat',
         },
     ],
-}
+};
 
 Mock.onGet('/api/notification').reply((config) => {
-    const response = NotificationDB.list
-    return [200, response]
-})
+    const response = NotificationDB.list;
+    return [200, response];
+});
 
 Mock.onPost('/api/notification/add').reply((config) => {
-    const response = NotificationDB.list
-    return [200, response]
-})
+    const response = NotificationDB.list;
+    return [200, response];
+});
 
 Mock.onPost('/api/notification/delete').reply((config) => {
-    let { id } = JSON.parse(config.data)
-    console.log(config.data)
+    // console.log(process.env.REACT_APP_BASE_URL + 'accounts.json');
+    let { id } = JSON.parse(config.data);
+    console.log(config.data);
 
     const response = NotificationDB.list.filter(
-        (notification) => notification.id !== id
-    )
-    NotificationDB.list = [...response]
-    return [200, response]
-})
+        (notification) => notification.id !== id,
+    );
+    NotificationDB.list = [...response];
+    return [200, response];
+});
 
 Mock.onPost('/api/notification/delete-all').reply((config) => {
-    NotificationDB.list = []
-    const response = NotificationDB.list
-    return [200, response]
-})
+    NotificationDB.list = [];
+    const response = NotificationDB.list;
+    return [200, response];
+});

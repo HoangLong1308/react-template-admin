@@ -8,17 +8,17 @@ import { Store } from './redux/Store';
 import routes from './routes';
 
 const App = () => {
-  const content = useRoutes(routes);
+    const content = useRoutes(routes);
 
-  return (
-    <Provider store={Store}>
-      <SettingsProvider>
-        <MatxTheme>
-          <AuthProvider>{content}</AuthProvider>
-        </MatxTheme>
-      </SettingsProvider>
-    </Provider>
-  );
+    return (
+        <Provider store={Store}>
+            <SettingsProvider>
+                <MatxTheme>
+                    <AuthProvider>{content}</AuthProvider>
+                </MatxTheme>
+            </SettingsProvider>
+        </Provider>
+    );
 };
 
 export default App;
