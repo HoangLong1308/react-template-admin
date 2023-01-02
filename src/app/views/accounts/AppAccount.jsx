@@ -9,12 +9,11 @@ import { tableHeader } from 'app/utils/constant';
 
 function AppAccount(props) {
     const { getAccountList, accounts } = props;
-    // console.log('1');
-    // const dispatch = useDispatch();
-    console.log(accounts);
-    console.log(tableHeader);
+
     useEffect(() => {
         getAccountList();
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     return (
         <Container>

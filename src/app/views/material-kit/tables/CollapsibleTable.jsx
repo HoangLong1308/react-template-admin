@@ -105,12 +105,12 @@ Row.propTypes = {
     row: PropTypes.shape({
         fullname: PropTypes.string.isRequired,
         email: PropTypes.string.isRequired,
-        phone: PropTypes.number.isRequired,
+        phone: PropTypes.string.isRequired,
         history: PropTypes.arrayOf(
             PropTypes.shape({
                 amount: PropTypes.number.isRequired,
-                customerId: PropTypes.string.isRequired,
-                date: PropTypes.string.isRequired,
+                customerId: PropTypes.number.isRequired,
+                date: PropTypes.number.isRequired,
             }),
         ).isRequired,
         createDate: PropTypes.string.isRequired,
