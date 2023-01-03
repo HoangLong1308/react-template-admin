@@ -30,4 +30,9 @@ const mapStateToProps = (state) => ({
     getAccountList: PropTypes.func.isRequired,
     accounts: state.accounts,
 });
-export default connect(mapStateToProps, { getAccountList })(AppAccount);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        getAccountList: () => dispatch(getAccountList()),
+    };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(AppAccount);
